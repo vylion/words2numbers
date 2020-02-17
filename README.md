@@ -1,5 +1,5 @@
 # Current state
-- Reads a string of words referring to a numeral and prints the digit equivalent.
+Reads a string of words referring to a numeral and prints the digit equivalent.
 
 For example:  
 `./bin/main "two hundred thousand, four hundred forty"` prints *200440*.
@@ -24,3 +24,4 @@ For example:
 - Better implement the language-agnostic setup (make NumeralManager to read from a file, instead of having a separate .cpp file only with the "language_setup" function)
 - Error handling
 - Make the whole CLI interface (help/usage tooltip message, options to read a [list of] string[s] or a [list of] file[s], ...)
+- Proper CMake configuration instead of a modified version of a Makefile generated at start
