@@ -5,6 +5,7 @@ BIN		:= bin
 SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
+LANG	:= en_gb
 
 LIBRARIES	:=
 
@@ -14,7 +15,7 @@ else
 EXECUTABLE	:= main
 endif
 
-all: $(EXECUTABLE)
+all: $(BIN)/$(EXECUTABLE)
 
 clean:
 	$(RM) $(BIN)/$(EXECUTABLE)
@@ -22,5 +23,5 @@ clean:
 run: all
 	./$(BIN)/$(EXECUTABLE)
 
-$(EXECUTABLE): $(SRC)/*.cpp
-	$(CC) $(C_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)
+$(BIN)/$(EXECUTABLE): $(SRC)/*.cpp
+	$(CC) $(C_FLAGS) -I$(INCLUDE) -L$(LIB) $^ languages/$(LANG)/language_setup.cpp -o $@ $(LIBRARIES)
